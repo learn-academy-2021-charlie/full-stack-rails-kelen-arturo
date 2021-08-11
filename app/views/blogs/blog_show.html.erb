@@ -1,3 +1,4 @@
+
 <h2>This blog: </h2>
 <h3>Title:
   <%= @blog.title %>
@@ -7,10 +8,10 @@
 <%= @blog.content %>
 <br>
 <br>
-<%= link_to 'Update this blog', edit_path(@blog) %>
+<%= link_to 'Update this blog', edit_blog_path(@blog) %>
 <br>
 <br>
-<%= link_to 'Delete this blog', delete_path(@blog), method: :delete, data: {confirm: 'Are you sure?'} %>
+<%= link_to 'Delete this blog', delete_blog_path(@blog), method: :delete, data: {confirm: 'Are you sure?'} %>
 <br>
 <br>
 <%= link_to 'Return to list', blogs_path %>

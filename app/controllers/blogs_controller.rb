@@ -1,4 +1,9 @@
-class MainController < ApplicationController
+class BlogsController < ApplicationController
+  def index
+    @blogs = Blog.all
+    render 'main.html.erb'
+  end
+
   def main
     @blogs = Blog.all
     render 'main.html.erb'
@@ -35,6 +40,11 @@ class MainController < ApplicationController
   def update
     @blog = Blog.find(params[:id])
     @blog.update(blog_params)
+    if @blog.valid?
+      redirect_to blogs_path
+    else
+      redirect_to edit_blog_path(@blog)
+    end
   end
 
   private
