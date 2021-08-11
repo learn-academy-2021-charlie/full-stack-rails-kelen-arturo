@@ -9,8 +9,22 @@ class MainController < ApplicationController
     render 'blog_show.html.erb'
   end
 
+  def new
+    @blog = Blog.new
+  end
+
+  def create
+      @blog = Blog.create(blog_params)
+      if @blog.valid?
+        redirect_to '/'
+      else
+        redirect_to '/blogs/new'
+      end
+  end
+
   private
   def blog_params
     params.require(:blog).permit(:title, :content)
   end
+
 end
