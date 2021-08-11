@@ -7,6 +7,9 @@
 <%= @blog.content %>
 <br>
 <br>
+<%= link_to 'Update this blog', edit_path(@blog) %>
+<br>
+<br>
 <%= link_to 'Delete this blog', delete_path(@blog), method: :delete, data: {confirm: 'Are you sure?'} %>
 <br>
 <br>
